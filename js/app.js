@@ -1,7 +1,7 @@
-var app = angular.module('myWebsite',[])
+var app = angular.module('myWebsite',['ngRoute'])
 	.config(function($routeProvider){
 		$routeProvider
-			.when('/about', {template:'partials/about.html'})
-			.when('/experience',{template:'partials/experience.html'})
-			.otherwise({redirectTo:'/home',template:'partials/home.html'})
+			.when('/about', {templateUrl:'partials/about.html'})
+			.when('/experience',{templateUrl:'partials/experience.html'})
+			.otherwise({redirectTo:'/home',templateUrl:'partials/home.html'})
 	});
