@@ -1,13 +1,14 @@
-app.controller('HomeController',['$scope','pokemon', 'shareData',
-function($scope,pokemon,shareData) {
+app.controller('HomeController',['$scope','$rootScope','pokemon', 'shareData',
+function($scope,$rootScope,pokemon,shareData) {
 
 	$scope.num = 0
 	$scope.greeting = "Hi. You Should Never See This."
 
-	$scope.$on('change:num', function(event, data){
-		$scope.num = shareData.num
-		$scope.updatePokemon($scope.num)
-	})
+	$rootScope.$on('change:num', function(event, data){
+		console.log('receiving broadcast');
+		$scope.num = data;
+		$scope.updatePokemon($scope.num);
+	});
 
 	$scope.updatePokemon = function(id){
 		$scope.greeting = "Hold on, updating...";
