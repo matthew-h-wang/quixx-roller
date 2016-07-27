@@ -1,14 +1,10 @@
-app.controller('HomeController',['$scope','$rootScope','pokemon', 'shareData',
-function($scope,$rootScope,pokemon,shareData) {
+
+
+app.controller('HomeController',['$scope','pokemon', 'shareData',
+function($scope,pokemon,shareData) {
 
 	$scope.num = 0
 	$scope.greeting = "Hi. You Should Never See This."
-
-	$rootScope.$on('change:num', function(event, data){
-		console.log('receiving broadcast');
-		$scope.num = data;
-		$scope.updatePokemon($scope.num);
-	});
 
 	$scope.updatePokemon = function(id){
 		$scope.greeting = "Hold on, updating...";
@@ -17,7 +13,19 @@ function($scope,$rootScope,pokemon,shareData) {
       		$scope.greeting = "The name of Pokemon Number " + id + " is " + data.name.toUpperCase() + "!";
     	});
 	}
-	
+
+
+	$scope.update = function(){
+		$scope.num = shareData.num;
+		$scope.updatePokemon($scope.num);
+	}
+
+	$scope.$on('change:num', function(event, data){
+		console.log('receiving broadcast');
+		$scope.update()
+	});	
+
+	$scope.update()
 
 
 
