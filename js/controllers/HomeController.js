@@ -1,10 +1,23 @@
-app.controller('HomeController',['$scope','pokemon',
-function($scope,pokemon) {
+app.controller('HomeController',['$scope','pokemon', 'shareData',
+function($scope,pokemon,shareData) {
 
-	pokemon.get({id:10})
-		.$promise.then(function(data) {
-      	$scope.greeting = data.name;
+	$scope.num = 0
+	$scope.greeting = "Hi. You Should Never See This."
+
+	$scope.$on('change:num', function(event, data){
+		$scope.num = shareData.num
+		$scope.updatePokemon($scope.num)
+	})
+
+	$scope.updatePokemon = function(id){
+		$scope.greeting = "Hold on, updating...";
+
+		pokemon.get({id:id}).$promise.then(function(data) {
+      		$scope.greeting = "The name of Pokemon Number " + id + " is " + data.name.toUpperCase() + "!";
     	});
+	}
+	
+
 
 
 //        4930956
