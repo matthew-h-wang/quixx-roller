@@ -5,6 +5,8 @@
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"> </script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-resource.min.js"></script>
+	<script src="js/shared/ngStorage.min.js"></script>
+	
 	<link rel='stylesheet' href='bootstrap/css/bootstrap.min.css'>
 
 
@@ -21,11 +23,14 @@
 
 </header>
 
-  <div> Hello {{"World"}}!</div>
-  <div ng-controller='MainController'>
-  	{{stuff}}
-
-  </div>
+  <form name="myForm">
+  <label>Enter a number:
+    <input type="number" name="number" ng-model="input.num">
+  </label>
+  <label>Enter a word:
+    <input type="text" name="word" ng-model="input.word">
+  </label>
+  </form>
 
 
   <div id="container">
