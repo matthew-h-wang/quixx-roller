@@ -1,9 +1,11 @@
-app.controller('HomeController',['$scope','$http',
-function($scope,$http) {
-	$http.get('https://pokeapi.co/api/v2/pokemon/4/')
-        .success(function(data) {
-            $scope.greeting = data.name;
-        });
+app.controller('HomeController',['$scope','pokemon',
+function($scope,pokemon) {
+
+	pokemon.get({id:10})
+		.$promise.then(function(data) {
+      	$scope.greeting = data.name;
+    	});
+
 
 //        4930956
 //        c831e018cf06d3e9faa8291c86bb7d14
