@@ -25,10 +25,10 @@
 
   <form name="myForm">
   <label>Enter a number:
-    <input type="number" name="number" ng-model="input.num">
+    <input type="number" name="number" ng-model="input.num" ngChange="updateStorage()">
   </label>
   <label>Enter a word:
-    <input type="text" name="word" ng-model="input.word">
+    <input type="text" name="word" ng-model="input.word" ngChange="updateStorage()">
   </label>
   </form>
 
