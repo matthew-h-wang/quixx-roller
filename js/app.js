@@ -14,6 +14,10 @@ app.config(function($routeProvider){
 				// controller: 'ExperienceController',
 				templateUrl:'partials/experience.html'
 			})
+			.when('/howard-is-hungry',{
+				// controller: 'ExperienceController',
+				templateUrl:'howard_is_hungry/howard_is_hungry.html'
+			})
 			.otherwise({
 				redirectTo:'/'
 			});
