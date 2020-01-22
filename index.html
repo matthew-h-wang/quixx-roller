@@ -1,55 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" ng-app='myWebsite'>
-<head>
-	<title>Matthew Wang</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"> </script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-resource.min.js"></script>
-	<script src="js/shared/ngStorage.min.js"></script>
-	
-	<link rel='stylesheet' href='bootstrap/css/bootstrap.min.css'>
-
-
-
-</head>
-<body ng-controller='MainController'>
-<header id="header">
-<div id='menu'>
-	<a ng-click="setRoute('home')" class='btn'>Home</a>
-	<a ng-click="setRoute('about')" class='btn'>About</a>
-	<a ng-click="setRoute('experience')" class='btn'>Experience</a>
-	<a ng-click="setRoute('howard-is-hungry')" class='btn'>"Howard Is Hungry"</a>	
-</div>
-
-</header>
-
-  <form name="myForm">
-  <label>Enter a number:
-    <input type="number" name="number" ng-model="input.num" ng-change="handleNumChange()">
-  </label>
-  <label>Enter a word:
-    <input type="text" name="word" ng-model="input.word" ng-change="handleWordChange()">
-  </label>
-  </form>
-
-
-  <div id="container">
-  	<div ng-view></div>
-
-  </div>
-
-
-<script  src='js/app.js'> </script>
-<!-- Services -->
-<script src='js/services/pokemon.js'> </script>
-<script src='js/services/shareData.js'> </script>
-
-<!-- Controllers -->
-<script src='js/controllers/MainController.js'> </script>
-<script src='js/controllers/HomeController.js'> </script>
-
-
-</body>
-
-
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>matthew-h-wang.github.io</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+        <h1>Sample Header</h1>
+        <nav>Sample Nav</nav>
+    </header>
+    <div>
+        <a href="./howard_is_hungry.html">Play Howard is Hungry</a>
+    </div>
+    <footer>
+        <p>Sample Footer</p>
+    </footer>
+  </body>
 </html>
