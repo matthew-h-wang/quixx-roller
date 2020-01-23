@@ -1593,7 +1593,20 @@ if ((other.eaten == 0) && ! this.caught) {
 		sound_play(sound_bite);
 
 	if (global.game_timer > 0) {
-		global.score_1 += 1;
+		//EDIT 1/22/2020
+		//Make score increase faster when timer is lower for 2 players
+		if (instance_number(object_game_master_two_player) > 0) {
+			if (global.game_timer / 30 > 120) 		//over 2 minutes left
+				global.score_1 += 1;
+			else if (global.game_timer / 30 > 60) 	//over 1 minute left
+				global.score_1 += 2;
+			else if (global.game_timer / 30 > 30) 	//over 30 seconds left
+				global.score_1 += 3;
+			else 									//less than 30 minute left
+				global.score_1 += 5;
+		}
+		else
+			global.score_1 += 1;
 		global.last_food_1 = other.image_index;
 	}
 	
@@ -2084,7 +2097,7 @@ food_timer = 80;
 instance_create(0,0,object_ready_start);
 instance_create(2* room_width/3,room_height/2 - 50, object_turtle);
 instance_create(room_width/3,room_height/2 - 50, object_turtle_2);
-
+//game_timer = 30 frames per second * 3 minutes (and 1 sec)
 global.game_timer = 30 * 60 * 3 + 29;
 
 
@@ -2373,7 +2386,17 @@ if ((other.eaten == 0) && !this.caught) {
 		sound_play(sound_bite);
 		
 	if (global.game_timer > 0) {
-		global.score_2 += 1;
+		
+		//EDIT 1/22/2020
+		//Make score increase faster when timer is lower
+		if (global.game_timer / 30 > 120) 		//over 2 minutes left
+			global.score_2 += 1;
+		else if (global.game_timer / 30 > 60) 	//over 1 minute left
+			global.score_2 += 2;
+		else if (global.game_timer / 30 > 30) 	//over 30 seconds left
+			global.score_2 += 3;
+		else 									//less than 30 minute left
+			global.score_2 += 5;
 		global.last_food_2 = other.image_index;
 	}
 	
