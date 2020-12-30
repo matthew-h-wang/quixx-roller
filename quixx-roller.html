@@ -12,10 +12,9 @@
 
 <body style="background-color:black;">
 
-    <h1 style='font-size:64px;display:flex;justify-content:center;align-items:center;color:green;'>
+    <h1 style='font-size:64px;display:flex;justify-content:center;color:orange;'>
         Quixx Dice Roller
     </h1>
-
     <div style='display:flex;flex-wrap:wrap;justify-content:center;align-items:center;'>
         <i id="die-1" class="fas fa-dice-one" style='font-size:128px;color:white;margin:10px;'></i>
         <i id="die-2" class="fas fa-dice-two" style='font-size:128px;color:white;margin:10px;'></i>
@@ -28,6 +27,10 @@
     <div style='display:flex;justify-content:center;align-items:center;'>
         <button id = 'roll-button' style='font-size:48px'>Click or press Space to roll the dice<i class='fas fa-dice'></i></button>
     </div>
+    <h3 style='font-size:32px;display:flex;justify-content:center;color:darkorange;'>
+        Click the colored dice to disable.
+    </h3>
+
 <script>
     const faces = ['one','two','three','four','five','six']
     const active = Array(7).fill(true);
@@ -59,7 +62,7 @@
         const id = 'die-' + d;
         document.getElementById(id).addEventListener('click',function(){
             active[d] = ! active[d];
-            document.getElementById(id).style.opacity = active[d] ? 1.0 : .3;
+            document.getElementById(id).style.opacity = active[d] ? 1.0 : .1;
 
         });
     }
