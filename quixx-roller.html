@@ -6,7 +6,7 @@
 
   <title>Quixx Dice Roller</title>
   <meta name="description" content="Quixx Dice Roller">
-  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src="https://kit.fontawesome.com/83a479ae7e.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -15,13 +15,13 @@
     <h1 style='font-size:64px;display:flex;justify-content:center;color:orange;'>
         Quixx Dice Roller
     </h1>
-    <div style='display:flex;flex-wrap:wrap;justify-content:center;align-items:center;'>
-        <i id="die-1" class="fas fa-dice-one" style='font-size:128px;color:white;margin:10px;'></i>
-        <i id="die-2" class="fas fa-dice-two" style='font-size:128px;color:white;margin:10px;'></i>
-        <i id="die-3" class="fas fa-dice-three" style='font-size:128px;color:red;margin:10px;'></i>
-        <i id="die-4" class="fas fa-dice-four" style='font-size:128px;color:yellow;margin:10px;'></i>
-        <i id="die-5" class="fas fa-dice-five" style='font-size:128px;color:blue;margin:10px;'></i>
-        <i id="die-6" class="fas fa-dice-six" style='font-size:128px;color:green;margin:10px;'></i>
+    <div style='display:flex;flex-wrap:wrap;justify-content:center;align-items:center;font-size:128px;'>
+        <i id="die-1" class="fas fa-dice-one" style='color:white;margin:10px;'></i>
+        <i id="die-2" class="fas fa-dice-two" style='color:white;margin:10px;'></i>
+        <i id="die-3" class="fas fa-dice-three" style='color:red;margin:10px;'></i>
+        <i id="die-4" class="fas fa-dice-four" style='color:yellow;margin:10px;'></i>
+        <i id="die-5" class="fas fa-dice-five" style='color:green;margin:10px;'></i>
+        <i id="die-6" class="fas fa-dice-six" style='color:blue;margin:10px;'></i>
     </div>
 
     <div style='display:flex;justify-content:center;align-items:center;'>
@@ -62,7 +62,7 @@
         const id = 'die-' + d;
         document.getElementById(id).addEventListener('click',function(){
             active[d] = ! active[d];
-            document.getElementById(id).style.opacity = active[d] ? 1.0 : .1;
+            document.getElementById(id).style.opacity = active[d] ? 1.0 : .3;
 
         });
     }
