@@ -1,2 +1,1 @@
-# matthew-h-wang.github.io
-My personal web-page
+A simple web utility for the dice game [Quixx](https://gamewright.com/product/Qwixx). Mobile-friendly.
